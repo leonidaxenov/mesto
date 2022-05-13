@@ -21,3 +21,12 @@
 @import url("../blocks/elements/__like/elements__like.css");
 @import url("../blocks/elements/__like/_disabled/elements__like_disabled.css");
 @import url("../blocks/elements/__like/_enabled/elements__like_enabled.css");
+@import url("../blocks/popup/popup.css");
+@import url("../blocks/popup/__container/popup__container.css");
+@import url("../blocks/popup/__header/popup__header.css");
+@import url("../blocks/popup/__name/popup__name.css");
+@import url("../blocks/popup/__description/popup__description.css");
+@import url("../blocks/popup/__save-button/popup__save-button.css");
+@import url("../blocks/popup/__close-button/popup__close-button.css");
+@import url("../blocks/popup/_hidden/popup_hidden.css");
+@import url("../blocks/popup/_visible/popup_visible.css");

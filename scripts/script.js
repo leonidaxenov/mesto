@@ -1,7 +1,6 @@
 function subrscribeOnLikeClick()
 {
   let likes=document.querySelectorAll('.elements__like');
-  console.log(likes.length);
   for(let i=0;i<likes.length;i++) {
     likes[i].addEventListener('click', (event)=> {
       if(event.currentTarget.classList.contains('elements__like_disabled')) {
@@ -16,4 +15,31 @@ function subrscribeOnLikeClick()
   }
 }
 
+function closePopup(event)
+{
+  let popup=document.querySelector('.popup');
+  popup.classList.remove('popup_hidden');
+  popup.classList.add('popup_visible');
+}
+
 subrscribeOnLikeClick();
+window.addEventListener('scroll',(event)=> {
+  let popup=document.querySelector('.popup');
+  popup.style.top=`${window.pageYOffset}px`;
+});
+
+let editButton=document.querySelector('.profile__edit-button');
+editButton.addEventListener('click', (event)=> {
+  let name=document.querySelector('.profile__name');
+  let input_name=document.querySelector('.popup__name');
+  input_name.value=name.textContent;
+  let desc=document.querySelector('.profile__description');
+  let input_desc=document.querySelector('.popup__description');
+  input_desc.value=desc.textContent;
+  let popup=document.querySelector('.popup');
+  popup.classList.remove('popup_hidden');
+  popup.classList.add('popup_visible');
+});
+
+let closeButton=document.querySelector('.popup__close-button');
+closeButton.addEventListener('click', closePopup);
