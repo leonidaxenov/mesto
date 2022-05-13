@@ -18,8 +18,8 @@ function subrscribeOnLikeClick()
 function closePopup(event)
 {
   let popup=document.querySelector('.popup');
-  popup.classList.remove('popup_hidden');
-  popup.classList.add('popup_visible');
+  popup.classList.remove('popup_visible');
+  popup.classList.add('popup_hidden');
 }
 
 subrscribeOnLikeClick();
@@ -43,3 +43,15 @@ editButton.addEventListener('click', (event)=> {
 
 let closeButton=document.querySelector('.popup__close-button');
 closeButton.addEventListener('click', closePopup);
+
+let form=document.querySelector('.popup__container');
+form.addEventListener('submit', (event)=> {
+  event.preventDefault();
+  let name=document.querySelector('.profile__name');
+  let input_name=document.querySelector('.popup__name');
+  name.textContent=input_name.value;
+  let desc=document.querySelector('.profile__description');
+  let input_desc=document.querySelector('.popup__description');
+  desc.textContent=input_desc.value;
+  closePopup(event);
+});

@@ -1,0 +1,17 @@
+.footer {
+  padding: 0;
+  margin: 66px 200px 60px 200px;
+  max-width: 880;
+}
+
+@media screen and (max-width:1280px) {
+  .footer {
+    margin: calc(48px + (100vw - 320px)*(66 - 48)/(1280 - 320)) calc(19px + (100vw - 320px)*(200 - 19)/(1280 - 320)) calc(36px + (100vw - 320px)*(60 - 36)/(1280 - 320)) calc(19px + (100vw - 320px)*(200 - 19)/(1280 - 320));
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer {
+    margin: 48px 19px 36px 19px;
+  }
+}

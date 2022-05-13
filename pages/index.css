@@ -30,3 +30,5 @@
 @import url("../blocks/popup/__close-button/popup__close-button.css");
 @import url("../blocks/popup/_hidden/popup_hidden.css");
 @import url("../blocks/popup/_visible/popup_visible.css");
+@import url("../blocks/footer/footer.css");
+@import url("../blocks/footer/__copyright/footer__copyright.css");
