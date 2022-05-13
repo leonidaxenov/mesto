@@ -11,80 +11,79 @@
 </head>
 <body class="page">
  <!---->
-  <header class="header">
+  <header class="header header_margins">
     <img class="header__logo" src="images/logo.svg" alt="Логотип">
   </header>
 
   <main class="content">
-    <section class="profile">
+    <section class="profile horizontal-margins profile_vertical-margins">
       <img class="profile__avatar" src="images/Avatar.png" alt="Кусто">
       <div class="profile__info">
         <h1 class="profile__name">Жак-Ив Кусто</h1>
-        <img class="profile__edit-button" src="images/edit_button.svg" alt="Кнопка редактирования">
+        <button class="profile__edit-button"></button>
         <p class="profile__description">Исследователь океана</p>
       </div>
-      <div class="profile__add-button">
-        <img class="profile__add-button-plus" src="images/plus.svg" alt="Плюс">
-      </div>
+      <button class="profile__add-button">
+      </button>
     </section>
-    <section class="elements">
+    <section class="elements horizontal-margins elements_vertical-margins">
       <div class="elements__item">
         <img class="elements__photo" src="images/kirill-pershin-1088404-unsplash.png" alt="Монастырь">
         <div class="elements__data">
           <h2 class="elements__description">Карачаевск</h2>
-          <div class="elements__like elements__like_disabled"></div>
+          <button class="elements__like elements__like_disabled"></button>
         </div>
       </div>
       <div class="elements__item">
         <img class="elements__photo" src="images/kirill-pershin-1404681-unsplash.png" alt="Эльбрус">
         <div class="elements__data">
           <h2 class="elements__description">Гора Эльбрус</h2>
-          <div class="elements__like elements__like_disabled"></div>
+          <button class="elements__like elements__like_disabled"></button>
         </div>
       </div>
       <div class="elements__item">
         <img class="elements__photo" src="images/kirill-pershin-1556355-unsplash.png" alt="Домбай">
         <div class="elements__data">
           <h2 class="elements__description">Домбай</h2>
-          <div class="elements__like elements__like_disabled"></div>
+          <button class="elements__like elements__like_disabled"></button>
         </div>
       </div>
       <div class="elements__item">
         <img class="elements__photo" src="images/kirill-pershin-1404681-unsplash.png" alt="Эльбрус">
         <div class="elements__data">
           <h2 class="elements__description">Гора Эльбрус</h2>
-          <div class="elements__like elements__like_disabled"></div>
+          <button class="elements__like elements__like_disabled"></button>
         </div>
       </div>
       <div class="elements__item">
         <img class="elements__photo" src="images/kirill-pershin-1556355-unsplash.png" alt="Домбай">
         <div class="elements__data">
           <h2 class="elements__description">Домбай</h2>
-          <div class="elements__like elements__like_disabled"></div>
+          <button class="elements__like elements__like_disabled"></button>
         </div>
       </div>
       <div class="elements__item">
         <img class="elements__photo" src="images/kirill-pershin-1088404-unsplash.png" alt="Монастырь">
         <div class="elements__data">
           <h2 class="elements__description">Карачаево-Черкесия</h2>
-          <div class="elements__like elements__like_disabled"></div>
+          <button class="elements__like elements__like_disabled"></button>
         </div>
       </div>
     </section>
-    <section class="popup popup_hidden">
-      <form class="popup__container">
-        <h2 class="popup__header">Редактировать профиль</h2>
-        <input type="text" class="popup__name">
-        <input type="text" class="popup__description">
-        <button type="submit" class="popup__save-button">Сохранить</button>
-        <img class="popup__close-button" src="images/close.svg" alt="Крестик">
-      </form>
-    </section>
   </main>
 <!---->
-  <footer class="footer">
+  <footer class="footer horizontal-margins footer_vertical-margins">
     <p class="footer__copyright">&copy; 2022. Леонид Аксенов</p>
   </footer>
+  <div class="popup popup_hidden">
+    <form class="popup__container">
+      <h2 class="popup__header">Редактировать профиль</h2>
+      <input type="text" class="popup__input popup__input_name">
+      <input type="text" class="popup__input popup__input_description">
+      <button type="submit" class="popup__save-button">Сохранить</button>
+      <button class="popup__close-button"></button>
+    </form>
+  </div>
   <script src="scripts/script.js">
   </script>
   </body>

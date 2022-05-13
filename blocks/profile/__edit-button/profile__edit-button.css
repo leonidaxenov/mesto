@@ -2,13 +2,19 @@
   padding: 0;
   margin: 0 0 0 18px;
   width: 24px;
+  height: 24px;
   align-self: center;
+  background-color: black;
+  border: none;
+  background-image: url("../../../images/edit_button.svg");
+  background-size: contain;
 }
 
 @media screen and (max-width:1280px) {
   .profile__edit-button  {
     margin-right: calc(10px + (100vw - 320px)*(18 - 10)/(1280 - 320));
     width: calc(18px + (100vw - 320px)*(24 - 18)/(1280 - 320));
+    height: calc(18px + (100vw - 320px)*(24 - 18)/(1280 - 320));
   }
 }
 
@@ -16,6 +22,7 @@
   .profile__edit-button {
     margin-right: 10px;
     width: 18px;
+    height: 18px;
   }
 }
 

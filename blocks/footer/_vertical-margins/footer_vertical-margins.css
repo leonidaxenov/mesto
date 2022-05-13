@@ -1,0 +1,18 @@
+.footer_vertical-margins {
+  margin-top: 66px;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width:1280px) {
+  .footer_vertical-margins {
+    margin-top: calc(48px + (100vw - 320px)*(66 - 48)/(1280 - 320));
+    margin-bottom: calc(36px + (100vw - 320px)*(60 - 36)/(1280 - 320));
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer_vertical-margins {
+    margin-top: 48px;
+    margin-bottom: 36px;
+  }
+}

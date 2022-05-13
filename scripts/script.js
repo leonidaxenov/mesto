@@ -31,10 +31,10 @@ window.addEventListener('scroll',(event)=> {
 let editButton=document.querySelector('.profile__edit-button');
 editButton.addEventListener('click', (event)=> {
   let name=document.querySelector('.profile__name');
-  let input_name=document.querySelector('.popup__name');
+  let input_name=document.querySelector('.popup__input_name');
   input_name.value=name.textContent;
   let desc=document.querySelector('.profile__description');
-  let input_desc=document.querySelector('.popup__description');
+  let input_desc=document.querySelector('.popup__input_description');
   input_desc.value=desc.textContent;
   let popup=document.querySelector('.popup');
   popup.classList.remove('popup_hidden');
@@ -48,10 +48,10 @@ let form=document.querySelector('.popup__container');
 form.addEventListener('submit', (event)=> {
   event.preventDefault();
   let name=document.querySelector('.profile__name');
-  let input_name=document.querySelector('.popup__name');
+  let input_name=document.querySelector('.popup__input_name');
   name.textContent=input_name.value;
   let desc=document.querySelector('.profile__description');
-  let input_desc=document.querySelector('.popup__description');
+  let input_desc=document.querySelector('.popup__input_description');
   desc.textContent=input_desc.value;
   closePopup(event);
 });
