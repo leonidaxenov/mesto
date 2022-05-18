@@ -1,15 +1,15 @@
 function subrscribeOnLikeClick()
 {
-  let likes=document.querySelectorAll('.elements__like');
+  let likes=document.querySelectorAll('.element__like');
   for(let i=0;i<likes.length;i++) {
     likes[i].addEventListener('click', (event)=> {
-      if(event.currentTarget.classList.contains('elements__like_disabled')) {
-        event.currentTarget.classList.remove('elements__like_disabled')
-        event.currentTarget.classList.add('elements__like_enabled')
+      if(event.currentTarget.classList.contains('element__like_disabled')) {
+        event.currentTarget.classList.remove('element__like_disabled')
+        event.currentTarget.classList.add('element__like_enabled')
       }
       else {
-        event.currentTarget.classList.remove('elements__like_enabled')
-        event.currentTarget.classList.add('elements__like_disabled')
+        event.currentTarget.classList.remove('element__like_enabled')
+        event.currentTarget.classList.add('element__like_disabled')
       }
     });
   }
@@ -24,7 +24,7 @@ function closePopup(event)
 
 subrscribeOnLikeClick();
 window.addEventListener('scroll',(event)=> {
-  let popup=document.querySelector('.popup');
+  let popup=document.querySelector('.popup_place_page');
   popup.style.top=`${window.pageYOffset}px`;
 });
 
