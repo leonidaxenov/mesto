@@ -11,8 +11,7 @@
 
 @media screen and (max-width:1280px) {
   .popup__container {
-    margin-left: max(19px,(100vw - 320px)/2);
-    margin-right: max(19px,(100vw - 320px)/2);
+    max-width: min(430px,(100vw - 64px));
     padding: calc(25px + (100vw - 320px)*(34 - 25)/(1280 - 320)) calc(22px + (100vw - 320px)*(36 - 22)/(1280 - 320)) calc(25px + (100vw - 320px)*(37 - 25)/(1280 - 320))  calc(22px + (100vw - 320px)*(36 - 22)/(1280 - 320));
   }
 }
