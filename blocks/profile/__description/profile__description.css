@@ -9,6 +9,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 @media screen and (max-width:1280px) {
@@ -22,6 +24,5 @@
   .profile__description {
     margin-top: 14px;
     font-size: 14px;
-    text-align: center;
   }
 }

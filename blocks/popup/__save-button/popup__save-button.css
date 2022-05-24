@@ -9,6 +9,8 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 1.22;
+  font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+  border: none;
 }
 
 @media screen and (max-width:1280px) {
