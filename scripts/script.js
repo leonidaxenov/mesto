@@ -60,6 +60,11 @@ function addCard(name,link){
     }
   });
 
+  const deleteElement = element.querySelector('.element__delete');
+  deleteElement.addEventListener('click', (event)=> {
+    event.currentTarget.parentElement.remove();
+  });
+
   const grid = document.querySelector('.elements');
   grid.prepend(element);
 }
