@@ -1,20 +1,3 @@
-function subrscribeOnLikeClick()
-{
-  let likes=document.querySelectorAll('.element__like');
-  for(let i=0;i<likes.length;i++) {
-    likes[i].addEventListener('click', (event)=> {
-      if(event.currentTarget.classList.contains('element__like_disabled')) {
-        event.currentTarget.classList.remove('element__like_disabled')
-        event.currentTarget.classList.add('element__like_enabled')
-      }
-      else {
-        event.currentTarget.classList.remove('element__like_enabled')
-        event.currentTarget.classList.add('element__like_disabled')
-      }
-    });
-  }
-}
-
 function closePopup(event)
 {
   let popup=document.querySelector('.popup');
@@ -22,9 +5,8 @@ function closePopup(event)
   popup.classList.add('popup_hidden');
 }
 
-subrscribeOnLikeClick();
 window.addEventListener('scroll',(event)=> {
-  let popup=document.querySelector('.popup_place_page');
+  let popup=document.querySelector('.popup');
   popup.style.top=`${window.pageYOffset}px`;
 });
 
@@ -55,3 +37,59 @@ form.addEventListener('submit', (event)=> {
   desc.textContent=input_desc.value;
   closePopup(event);
 });
+
+function addCard(name,link){
+  const userTemplate = document.querySelector('#card').content;
+  const element = userTemplate.querySelector('.element').cloneNode(true);
+
+  const imageElement = element.querySelector('.element__photo');
+  imageElement.src = link;
+
+  const textElement = element.querySelector('.element__description');
+  textElement.textContent = name;
+
+  const likeElement = element.querySelector('.element__like');
+  likeElement.addEventListener('click', (event)=> {
+    if(event.currentTarget.classList.contains('element__like_disabled')) {
+      event.currentTarget.classList.remove('element__like_disabled')
+      event.currentTarget.classList.add('element__like_enabled')
+    }
+    else {
+      event.currentTarget.classList.remove('element__like_enabled')
+      event.currentTarget.classList.add('element__like_disabled')
+    }
+  });
+
+  const grid = document.querySelector('.elements');
+  grid.prepend(element);
+}
+
+(()=>{
+  const initialCards = [
+    {
+      name: 'Архыз',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+      name: 'Челябинская область',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+      name: 'Иваново',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+      name: 'Камчатка',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+      name: 'Холмогорский район',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+      name: 'Байкал',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+  ];
+  initialCards.forEach(card=>addCard(card.name,card.link));
+})();
