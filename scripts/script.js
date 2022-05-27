@@ -69,14 +69,19 @@ function showPopup(event)
 
 function closePopup(event)
 {
-  let popup=document.querySelector('.popup');
-  popup.classList.remove('popup_visible');
-  popup.classList.add('popup_hidden');
+  const popups=document.querySelectorAll('.popup');
+  console.log(popups);
+  popups.forEach(popup=>{
+    popup.classList.remove('popup_visible');
+    popup.classList.add('popup_hidden');
+  });
 }
 
 window.addEventListener('scroll',(event)=> {
-  let popup=document.querySelector('.popup');
-  popup.style.top=`${window.pageYOffset}px`;
+  const popups=document.querySelectorAll('.popup');
+  popups.forEach(popup=>{
+    popup.style.top=`${window.pageYOffset}px`;
+  });
 });
 
 const editButton=document.querySelector('.profile__edit-button');
@@ -85,8 +90,8 @@ editButton.addEventListener('click', showPopup);
 const addButton=document.querySelector('.profile__add-button');
 addButton.addEventListener('click', showPopup);
 
-const closeButton=document.querySelector('.popup__close-button');
-closeButton.addEventListener('click', closePopup);
+const closeButtons=document.querySelectorAll('.popup__close-button');
+closeButtons.forEach(closeButton=>closeButton.addEventListener('click', closePopup));
 
 function addCard(name,link){
   const userTemplate = document.querySelector('#card').content;
@@ -94,6 +99,19 @@ function addCard(name,link){
 
   const imageElement = element.querySelector('.element__photo');
   imageElement.src = link;
+  imageElement.addEventListener('click', (event)=> {
+    const popup=document.querySelector('.popup_view-element');
+    popup.classList.remove('popup_hidden');
+    popup.classList.add('popup_visible');
+
+    const image=popup.querySelector('.popup__element-image');
+    image.src=link;
+    image.alt=name;
+
+    const text=popup.querySelector('.popup__element-name');
+    text.textContent=name;
+  });
+
 
   const textElement = element.querySelector('.element__description');
   textElement.textContent = name;

@@ -1,0 +1,5 @@
+.popup__element-image {
+  width: 100%;
+  aspect-ratio: 240 / 299;
+  object-fit: cover;
+}
