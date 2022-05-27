@@ -5,19 +5,11 @@
   margin: 0;
   padding: 0;
   background: rgba(0, 0, 0, 0.);
-  width: 433px;
-}
-
-@media screen and (max-width:1280px) {
-  .popup__element-container {
-    width: min(433px,(100vw - 80px));
-  }
 }
 
 @media screen and (max-width: 320px) {
   .popup__element-container {
     margin-left: 40px;
     margin-right: 40px;
-    width: calc(100vw - 80px);
   }
 }

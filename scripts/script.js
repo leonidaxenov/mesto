@@ -111,7 +111,7 @@ function addCard(name,link){
     const text=popup.querySelector('.popup__element-name');
     text.textContent=name;
   });
-
+  imageElement.style.height=imageElement.style.width;
 
   const textElement = element.querySelector('.element__description');
   textElement.textContent = name;
@@ -135,6 +135,7 @@ function addCard(name,link){
 
   const grid = document.querySelector('.elements');
   grid.prepend(element);
+  console.log(imageElement.style);
 }
 
 (()=>{

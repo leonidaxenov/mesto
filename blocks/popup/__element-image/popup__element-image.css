@@ -1,5 +1,19 @@
 .popup__element-image {
-  width: 100%;
-  aspect-ratio: 240 / 299;
+  width: 433px;
+  height: calc(433px*1.25);
   object-fit: cover;
+}
+
+@media screen and (max-width:1280px) {
+  .popup__element-image {
+    width: min(433px,(100vw - 80px));
+    height: min(433px*1.25,calc((100vw - 80px)*1.25));
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__element-image {
+    width: calc(100vw - 80px);
+    height: calc((100vw - 80px)*1.25);
+  }
 }
