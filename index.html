@@ -34,20 +34,6 @@
     <p class="copyright">&copy; 2022. Леонид Аксенов</p>
   </footer>
   <div class="popup popup_hidden">
-    <form class="popup__container">
-      <h2 class="popup__header"></h2>
-      <input type="text" class="popup__input popup__input_name">
-      <input type="text" class="popup__input popup__input_description">
-      <button type="submit" class="popup__save-button">Сохранить</button>
-      <button type="button" class="popup__close-button"></button>
-    </form>
-  </div>
-  <div class="popup popup_hidden popup_view-element">
-    <div class="popup__element-container">
-      <img class="popup__element-image" src="./images/Avatar.png" alt="Картинка">
-      <p class="popup__element-name">Название</p>
-      <button type="button" class="popup__close-button"></button>
-    </div>
   </div>
   <template id="card">
     <div class="element">
@@ -57,6 +43,22 @@
         <h2 class="element__description"></h2>
         <button type="button" class="element__like element__like_disabled"></button>
       </div>
+    </div>
+  </template>
+  <template id="popup_add_edit">
+    <form class="popup__container">
+      <h2 class="popup__header"></h2>
+      <input type="text" class="popup__input popup__input_name">
+      <input type="text" class="popup__input popup__input_description">
+      <button type="submit" class="popup__save-button">Сохранить</button>
+      <button type="button" class="popup__close-button"></button>
+    </form>
+  </template>
+  <template id="popup_view_element">
+    <div class="popup__element-container">
+      <img class="popup__element-image" src="./images/Avatar.png" alt="Картинка">
+      <p class="popup__element-name">Название</p>
+      <button type="button" class="popup__close-button"></button>
     </div>
   </template>
   <script src="scripts/script.js">
