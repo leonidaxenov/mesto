@@ -33,19 +33,7 @@
   <footer class="footer">
     <p class="copyright">&copy; 2022. Леонид Аксенов</p>
   </footer>
-  <div class="popup popup_hidden">
-  </div>
-  <template id="card">
-    <li class="element">
-      <img class="element__photo" src="./images/Avatar.png" alt="Картинка">
-      <img class="element__delete" src="./images/trash.svg" alt="Мусорная корзина">
-      <div class="element__data">
-        <h2 class="element__description"></h2>
-        <button type="button" class="element__like element__like_disabled"></button>
-      </div>
-    </li>
-  </template>
-  <template id="popup_edit">
+  <div class="popup popup_edit-profile">
     <form class="popup__container">
       <h2 class="popup__header">Редактировать профиль</h2>
       <input type="text" class="popup__input popup__input_name">
@@ -53,8 +41,8 @@
       <button type="submit" class="popup__save-button">Сохранить</button>
       <button type="button" class="popup__close-button"></button>
     </form>
-  </template>
-  <template id="popup_add">
+  </div>
+  <div class="popup popup_add-card">
     <form class="popup__container">
       <h2 class="popup__header">Новое место</h2>
       <input type="text" placeholder="Название" class="popup__input popup__input_name">
@@ -62,13 +50,23 @@
       <button type="submit" class="popup__save-button">Сохранить</button>
       <button type="button" class="popup__close-button"></button>
     </form>
-  </template>
-  <template id="popup_view_element">
+  </div>
+  <div class="popup popup_view-card">
     <div class="popup__element-container">
       <img class="popup__element-image" src="./images/Avatar.png" alt="Картинка">
       <p class="popup__element-name">Название</p>
       <button type="button" class="popup__close-button"></button>
     </div>
+  </div>
+   <template id="card">
+    <li class="element">
+      <img class="element__photo" src="./images/Avatar.png" alt="Картинка">
+      <img class="element__delete" src="./images/trash.svg" alt="Мусорная корзина">
+      <div class="element__data">
+        <h2 class="element__description"></h2>
+        <button type="button" class="element__like"></button>
+      </div>
+    </li>
   </template>
   <script src="scripts/script.js">
   </script>

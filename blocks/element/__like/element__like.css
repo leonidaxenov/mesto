@@ -5,6 +5,7 @@
   height: 19px;
   border: none;
   background-color: #FFFFFF;
+  background-image: url("../../../images/like-disabled.svg");
 }
 
 .element__like:hover {
