@@ -52,12 +52,21 @@ initialCards.forEach(card=>{
 });
 
 
-function closePopup(event, popup)
+function closePopup(popup)
 {
-  popup.classList.remove('popup_visible');
+  const fadeOut = [{ opacity: '1'},
+    {opacity: '0' }];
+  const fadeOutTiming = {
+      duration: 1000,
+      iterations: 1,
+    };
+  const animation = popup.animate(fadeOut, fadeOutTiming);
+  animation.addEventListener('finish', () => {
+    popup.classList.remove('popup_visible');
+  });
 }
 
-function showPopup(event, popup)
+function showPopup(popup)
 {
   popup.classList.add('popup_visible');
 }
@@ -65,7 +74,7 @@ function showPopup(event, popup)
 function addCloseEventListener(popup)
 {
   const closeButton = popup.querySelector('.popup__close-button');
-  closeButton.addEventListener('click', event=>closePopup(event,popup));
+  closeButton.addEventListener('click', ()=>closePopup(popup));
 }
 
 function addSaveEventListener(popup, onSave)
@@ -73,8 +82,8 @@ function addSaveEventListener(popup, onSave)
   const form = popup.querySelector('.popup__container');
   form.addEventListener('submit', event=>{
     event.preventDefault();
-    onSave(event);
-    closePopup(event,popup);
+    onSave();
+    closePopup(popup);
   });
 }
 
@@ -90,11 +99,11 @@ function createCard(name,link)
   const imageElement = element.querySelector('.element__photo');
   imageElement.src = link;
   imageElement.alt = name;
-  imageElement.addEventListener('click', (event)=> {
+  imageElement.addEventListener('click', ()=> {
     formViewElementImage.src = link;
     formViewElementImage.alt = name;
     formViewElementText.textContent = name;
-    showPopup(event,popupViewCard);
+    showPopup(popupViewCard);
   });
 
   const textElement = element.querySelector('.element__description');
@@ -109,29 +118,25 @@ function createCard(name,link)
   });
   return element;
 }
-/*
-window.addEventListener('scroll',(event)=> {
-   popup.style.top=`${window.pageYOffset}px`;
-});
-*/
-editButton.addEventListener('click', event=>{
+
+editButton.addEventListener('click', ()=>{
   formEditName.value = profileName.textContent;
   formEditDescription.value = profileDesc.textContent;
-  showPopup(event,popupEditProfile);
+  showPopup(popupEditProfile);
 });
 
 addCloseEventListener(popupEditProfile);
-addSaveEventListener(popupEditProfile, event=>{
+addSaveEventListener(popupEditProfile, ()=>{
   profileName.textContent = formEditName.value;
   profileDesc.textContent = formEditDescription.value;
 });
 
-addButton.addEventListener('click', event=>{
+addButton.addEventListener('click', ()=>{
   formAddCard.reset();
-  showPopup(event,popupAddCard);
+  showPopup(popupAddCard);
 });
 addCloseEventListener(popupAddCard);
-addSaveEventListener(popupAddCard, event=>{
+addSaveEventListener(popupAddCard, ()=>{
   const element = createCard(formAddName.value,formAddUrl.value);
   gridCards.prepend(element);
 });

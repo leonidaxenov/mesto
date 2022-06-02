@@ -1,3 +1,7 @@
+@keyframes fadeOut {
+  from { opacity: 1; }
+    to { opacity: 0; }
+}
 .popup {
   margin: 0;
   position: absolute;
@@ -9,4 +13,5 @@
   align-items: center;
   justify-content: center;
   display: none;
+  animation: fadeOut 10s;
 }
