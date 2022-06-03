@@ -54,16 +54,9 @@ initialCards.forEach(card=>{
 
 function closePopup(popup)
 {
-  const fadeOut = [{ opacity: '1'},
-    {opacity: '0' }];
-  const fadeOutTiming = {
-      duration: 1000,
-      iterations: 1,
-    };
-  const animation = popup.animate(fadeOut, fadeOutTiming);
-  animation.addEventListener('finish', () => {
-    popup.classList.remove('popup_visible');
-  });
+  popup.classList.remove('popup_visible');
+  popup.classList.add('popup_fade-out');
+  popup.addEventListener('transitionend', ()=>popup.classList.remove('popup_fade-out'));
 }
 
 function showPopup(popup)
