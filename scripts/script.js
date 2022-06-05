@@ -55,8 +55,6 @@ initialCards.forEach(card=>{
 function closePopup(popup)
 {
   popup.classList.remove('popup_visible');
-  popup.classList.add('popup_fade-out');
-  popup.addEventListener('transitionend', ()=>popup.classList.remove('popup_fade-out'));
 }
 
 function showPopup(popup)
