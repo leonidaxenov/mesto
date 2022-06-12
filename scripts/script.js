@@ -64,8 +64,11 @@ function showPopup(popup)
 
 function addCloseEventListener(popup)
 {
-  const closeButton = popup.querySelector('.popup__close-button');
-  closeButton.addEventListener('click', ()=>closePopup(popup));
+  popup.addEventListener('click', (evt)=>{
+    if(evt.target.classList.contains('popup__close-button') || evt.target===popup)
+      closePopup(popup);
+  }
+  );
 }
 
 function addSaveEventListener(popup, onSave)
@@ -116,7 +119,7 @@ editButton.addEventListener('click', ()=>{
   showPopup(popupEditProfile);
 });
 
-addCloseEventListener(popupEditProfile);
+
 addSaveEventListener(popupEditProfile, ()=>{
   profileName.textContent = formEditName.value;
   profileDesc.textContent = formEditDescription.value;
@@ -126,10 +129,18 @@ addButton.addEventListener('click', ()=>{
   formAddCard.reset();
   showPopup(popupAddCard);
 });
-addCloseEventListener(popupAddCard);
+
 addSaveEventListener(popupAddCard, ()=>{
   const element = createCard(formAddName.value,formAddUrl.value);
   gridCards.prepend(element);
 });
 
-addCloseEventListener(popupViewCard);
+Array.from(document.querySelectorAll('.popup')).forEach(addCloseEventListener);
+
+document.addEventListener('keydown', (evt)=>{
+  if(evt.key === 'Escape'){
+    const popup = document.querySelector('.popup_visible');
+    if(popup)
+      closePopup(popup);
+  }
+});
